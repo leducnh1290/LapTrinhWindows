@@ -1,4 +1,5 @@
-﻿using LapTrinhWindows.TruyenData;
+﻿using LapTrinhWindows.Buoi4;
+using LapTrinhWindows.TruyenData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace LapTrinhWindows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Buoi4.ListView());
         }
     }
 }
