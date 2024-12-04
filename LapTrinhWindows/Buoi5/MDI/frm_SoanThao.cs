@@ -119,7 +119,7 @@ namespace LapTrinhWindows.Buoi5.MDI
                 richTextBox.SelectionFont = newFont;
             }
         }
-
+       
         private void ToggleBold()
         {
             if (richTextBox.SelectionFont != null)
@@ -152,7 +152,7 @@ namespace LapTrinhWindows.Buoi5.MDI
 
         private void frm_SoanThao_Load(object sender, EventArgs e)
         {
-            fontComboBox.Text = "Tahoma";
+            fontComboBox.Text = "Time New Roman";
             sizeComboBox.Text = "14";
             foreach (FontFamily font in new InstalledFontCollection().Families)
             {
