@@ -110,6 +110,24 @@
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(800, 34);
             this.toolStrip.TabIndex = 1;
+            // Tạo ToolStripButton cho Tạo mới
+            this.newButton = new System.Windows.Forms.ToolStripButton();
+            this.newButton.Text = "New"; // Văn bản hiển thị
+            this.newButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text; // Hiển thị văn bản thay vì hình ảnh
+            this.newButton.ToolTipText = "Tạo văn bản mới";
+            this.newButton.Click += new System.EventHandler(this.NewFile);
+
+            // Tạo ToolStripButton cho Lưu file
+            this.saveButton = new System.Windows.Forms.ToolStripButton();
+            this.saveButton.Text = "Save"; // Văn bản hiển thị
+            this.saveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text; // Hiển thị văn bản thay vì hình ảnh
+            this.saveButton.ToolTipText = "Lưu văn bản";
+            this.saveButton.Click += new System.EventHandler(this.SaveFile);
+
+            // Thêm các nút vào ToolStrip
+            this.toolStrip.Items.Add(this.newButton);
+            this.toolStrip.Items.Add(this.saveButton);
+
             // 
             // fontComboBox
             // 
@@ -196,5 +214,7 @@
         private System.Windows.Forms.ToolStripButton underlineButton;   // Nút gạch chân
         private System.Windows.Forms.RichTextBox richTextBox;
         private System.Windows.Forms.ToolStripMenuItem địnhDạngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton newButton; // Nút Tạo mới
+        private System.Windows.Forms.ToolStripButton saveButton;
     }
 }
