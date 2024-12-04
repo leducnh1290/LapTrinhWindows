@@ -53,9 +53,6 @@ namespace LapTrinhWindows.Buoi4
             this.Close();
     }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+    
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace LapTrinhWindows.Buoi5.MDI
+﻿using System.Drawing;
+
+namespace LapTrinhWindows.Buoi5.MDI
 {
     partial class frm_SoanThao
     {
@@ -43,12 +45,16 @@
             this.formatMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.địnhDạngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newButton = new System.Windows.Forms.ToolStripButton();
+            this.saveButton = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
+         
             // 
             // menuStrip
             // 
+
             this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -101,6 +107,8 @@
             // 
             this.toolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newButton,
+            this.saveButton,
             this.fontComboBox,
             this.sizeComboBox,
             this.boldButton,
@@ -110,27 +118,18 @@
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(800, 34);
             this.toolStrip.TabIndex = 1;
-            // Tạo ToolStripButton cho Tạo mới
-            this.newButton = new System.Windows.Forms.ToolStripButton();
-            this.newButton.Text = "New"; // Văn bản hiển thị
+
+            //new
+          
+            this.newButton.Text = "New";
             this.newButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text; // Hiển thị văn bản thay vì hình ảnh
             this.newButton.ToolTipText = "Tạo văn bản mới";
             this.newButton.Click += new System.EventHandler(this.NewFile);
-
-            // Tạo ToolStripButton cho Lưu file
-            this.saveButton = new System.Windows.Forms.ToolStripButton();
-            this.saveButton.Text = "Save"; // Văn bản hiển thị
+            // save
+            this.saveButton.Text = "Save";
             this.saveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text; // Hiển thị văn bản thay vì hình ảnh
             this.saveButton.ToolTipText = "Lưu văn bản";
             this.saveButton.Click += new System.EventHandler(this.SaveFile);
-
-            // Thêm các nút vào ToolStrip
-            this.toolStrip.Items.Add(this.newButton);
-            this.toolStrip.Items.Add(this.saveButton);
-
-            // 
-            // fontComboBox
-            // 
             this.fontComboBox.Name = "fontComboBox";
             this.fontComboBox.Size = new System.Drawing.Size(121, 34);
             // 
@@ -199,22 +198,22 @@
         #endregion
 
         private System.ComponentModel.IContainer component = null;
-        private System.Windows.Forms.MenuStrip menuStrip;               // Thanh menu
-        private System.Windows.Forms.ToolStrip toolStrip;               // Thanh công cụ
+        private System.Windows.Forms.MenuStrip menuStrip;              
+        private System.Windows.Forms.ToolStrip toolStrip;               
         private System.Windows.Forms.ToolStripMenuItem systemMenu;
-        private System.Windows.Forms.ToolStripMenuItem formatMenu; // Menu "Hệ thống"
-        private System.Windows.Forms.ToolStripMenuItem newFileItem;     // Menu item "Tạo văn bản mới"
-        private System.Windows.Forms.ToolStripMenuItem openFileItem;    // Menu item "Mở tập tin"
-        private System.Windows.Forms.ToolStripMenuItem saveFileItem;    // Menu item "Lưu văn bản"
-        private System.Windows.Forms.ToolStripMenuItem exitItem;        // Menu item "Thoát"
-        private System.Windows.Forms.ToolStripComboBox fontComboBox;    // Hộp chọn font chữ
-        private System.Windows.Forms.ToolStripComboBox sizeComboBox;    // Hộp chọn kích thước chữ
-        private System.Windows.Forms.ToolStripButton boldButton;        // Nút in đậm
-        private System.Windows.Forms.ToolStripButton italicButton;      // Nút in nghiêng
-        private System.Windows.Forms.ToolStripButton underlineButton;   // Nút gạch chân
+        private System.Windows.Forms.ToolStripMenuItem formatMenu; 
+        private System.Windows.Forms.ToolStripMenuItem newFileItem;     
+        private System.Windows.Forms.ToolStripMenuItem openFileItem;    
+        private System.Windows.Forms.ToolStripMenuItem saveFileItem;    
+        private System.Windows.Forms.ToolStripMenuItem exitItem;        
+        private System.Windows.Forms.ToolStripComboBox fontComboBox;    
+        private System.Windows.Forms.ToolStripComboBox sizeComboBox;    
+        private System.Windows.Forms.ToolStripButton boldButton;        
+        private System.Windows.Forms.ToolStripButton italicButton;      
+        private System.Windows.Forms.ToolStripButton underlineButton;  
         private System.Windows.Forms.RichTextBox richTextBox;
         private System.Windows.Forms.ToolStripMenuItem địnhDạngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton newButton; // Nút Tạo mới
+        private System.Windows.Forms.ToolStripButton newButton; 
         private System.Windows.Forms.ToolStripButton saveButton;
     }
 }

@@ -96,12 +96,6 @@
     <Compile Include="Buoi5\MDI\frm_SoanThao.Designer.cs">
       <DependentUpon>frm_SoanThao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Buoi5\MDI\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Buoi5\MDI\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Buoi4\frm_HocDataGridView.resx">
       <DependentUpon>frm_HocDataGridView.cs</DependentUpon>
