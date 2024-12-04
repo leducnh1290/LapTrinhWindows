@@ -18,8 +18,8 @@ namespace LapTrinhWindows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Buoi4.ListView()); //Bài 4
-            Application.Run(new Buoi5.MDI.frm_SoanThao()); //Bài 5
+            Application.Run(new Buoi4.ListView()); //Bài 4
+            //Application.Run(new Buoi5.MDI.frm_SoanThao()); //Bài 5
         }
     }
 }
