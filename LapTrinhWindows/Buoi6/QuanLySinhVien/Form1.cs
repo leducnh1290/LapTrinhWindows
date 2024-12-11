@@ -9,18 +9,17 @@ namespace LapTrinhWindows.Buoi6.QuanLySinhVien
     public partial class Form1 : Form
     {
         private Model1 dbContext;
+        private String studentID;
 
         public Form1()
         {
             InitializeComponent();
-            dbContext = new Model1(); // Kết nối đến DbContext
+            dbContext = new Model1();
             LoadFaculties();
             LoadStudents();
         }
 
-        /// <summary>
-        /// Tải danh sách Khoa lên ComboBox
-        /// </summary>
+      
         private void LoadFaculties()
         {
             var faculties = dbContext.Faculties.ToList();
@@ -29,9 +28,7 @@ namespace LapTrinhWindows.Buoi6.QuanLySinhVien
             cboFaculty.ValueMember = "FacultyID";
         }
 
-        /// <summary>
-        /// Tải danh sách Sinh viên lên DataGridView
-        /// </summary>
+       
         private void LoadStudents()
         {
             var students = dbContext.Students
@@ -49,9 +46,6 @@ namespace LapTrinhWindows.Buoi6.QuanLySinhVien
          ;
         }
 
-        /// <summary>
-        /// Thêm sinh viên mới
-        /// </summary>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
@@ -76,9 +70,7 @@ namespace LapTrinhWindows.Buoi6.QuanLySinhVien
             }
         }
 
-        /// <summary>
-        /// Sửa thông tin sinh viên
-        /// </summary>
+ 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             try
@@ -108,9 +100,7 @@ namespace LapTrinhWindows.Buoi6.QuanLySinhVien
             }
         }
 
-        /// <summary>
-        /// Xóa sinh viên
-        /// </summary>
+     
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
@@ -137,9 +127,7 @@ namespace LapTrinhWindows.Buoi6.QuanLySinhVien
             }
         }
 
-        /// <summary>
-        /// Xóa các trường nhập liệu
-        /// </summary>
+   
         private void ClearInputs()
         {
             txtStudentID.Clear();
@@ -149,12 +137,12 @@ namespace LapTrinhWindows.Buoi6.QuanLySinhVien
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            if (keyData == Keys.F2) // Quản lý khoa
+            if (keyData == Keys.F2) 
             {
                 btnQuanLyKhoa.PerformClick();
                 return true;
             }
-            if (keyData == (Keys.Control | Keys.F)) // Tìm kiếm
+            if (keyData == (Keys.Control | Keys.F)) 
             {
                 btnTimKiem.PerformClick();
                 return true;
@@ -173,9 +161,7 @@ namespace LapTrinhWindows.Buoi6.QuanLySinhVien
             formTimKiem.ShowDialog();
         }
 
-        /// <summary>
-        /// Hiển thị thông tin sinh viên được chọn lên các trường nhập liệu
-        /// </summary>
+     
         private void dgvStudents_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvStudents.CurrentRow != null)
@@ -184,6 +170,27 @@ namespace LapTrinhWindows.Buoi6.QuanLySinhVien
                 txtFullName.Text = dgvStudents.CurrentRow.Cells["FullName"].Value.ToString();
                 txtAverageScore.Text = dgvStudents.CurrentRow.Cells["AverageScore"].Value.ToString();
                 cboFaculty.Text = dgvStudents.CurrentRow.Cells["FacultyName"].Value.ToString();
+            }
+        }
+
+        private void dgvStudents_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgvStudents.Rows.Count)
+            {
+              
+                DataGridViewRow selectedRow = dgvStudents.Rows[e.RowIndex];
+             
+                studentID = selectedRow.Cells["StudentID"].Value?.ToString();
+               
+                string fullName = selectedRow.Cells["FullName"].Value?.ToString();
+                string facultyName = selectedRow.Cells["FacultyName"].Value?.ToString();
+                float averageScore = float.Parse(selectedRow.Cells["AverageScore"].Value?.ToString() ?? "0");
+                txtStudentID.Text = studentID;
+                txtFullName.Text = fullName;   
+                txtAverageScore.Text = averageScore.ToString();
+                cboFaculty.Text = facultyName;
+
+
             }
         }
     }

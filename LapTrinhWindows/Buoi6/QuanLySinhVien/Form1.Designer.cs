@@ -176,6 +176,7 @@
             this.dgvStudents.RowHeadersWidth = 62;
             this.dgvStudents.Size = new System.Drawing.Size(501, 254);
             this.dgvStudents.TabIndex = 4;
+            this.dgvStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellClick);
             // 
             // toolStrip
             // 

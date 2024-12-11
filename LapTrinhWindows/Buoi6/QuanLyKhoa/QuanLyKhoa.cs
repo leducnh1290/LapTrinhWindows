@@ -40,13 +40,13 @@ namespace LapTrinhWindows.Buoi6.QuanLyKhoa
 
                 if (faculty != null)
                 {
-                    // Sửa thông tin khoa
+                
                     faculty.FacultyName = txtTenKhoa.Text;
                     faculty.TongSoGS = int.Parse(txtTongSoGS.Text);
                 }
                 else
                 {
-                    // Thêm mới khoa
+                
                     dbContext.Faculties.Add(new Faculty
                     {
                         FacultyID = facultyId,
@@ -70,7 +70,7 @@ namespace LapTrinhWindows.Buoi6.QuanLyKhoa
             {
                 DataGridViewRow selectedRow = dgvKhoa.Rows[e.RowIndex];
 
-                // Kiểm tra null trước khi gán
+          
                 txtMaKhoa.Text = selectedRow.Cells["FacultyID"].Value?.ToString() ?? string.Empty;
                 txtTenKhoa.Text = selectedRow.Cells["FacultyName"].Value?.ToString() ?? string.Empty;
                 txtTongSoGS.Text = selectedRow.Cells["TongSoGS"].Value?.ToString() ?? string.Empty;
