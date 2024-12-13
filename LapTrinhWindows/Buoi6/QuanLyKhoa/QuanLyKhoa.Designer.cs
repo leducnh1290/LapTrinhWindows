@@ -144,6 +144,7 @@
             this.dgvKhoa.RowHeadersWidth = 62;
             this.dgvKhoa.Size = new System.Drawing.Size(385, 246);
             this.dgvKhoa.TabIndex = 4;
+            this.dgvKhoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhoa_CellClick_1);
             // 
             // QuanLyKhoa
             // 

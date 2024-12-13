@@ -81,7 +81,7 @@ namespace LapTrinhWindows.Buoi6.QuanLyKhoa
         {
             try
             {
-                int facultyId = int.Parse(txtMaKhoa.Text);
+                int facultyId = int.Parse(txtMaKhoa.Text.Equals("")?"0": txtMaKhoa.Text);
                 var faculty = dbContext.Faculties.FirstOrDefault(f => f.FacultyID == facultyId);
 
                 if (faculty != null)
@@ -105,6 +105,22 @@ namespace LapTrinhWindows.Buoi6.QuanLyKhoa
         private void btnDong_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvKhoa_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgvKhoa.Rows.Count)
+            {
+
+                DataGridViewRow selectedRow = dgvKhoa.Rows[e.RowIndex];
+
+                string facultyID = selectedRow.Cells["FacultyID"].Value?.ToString();
+                string facultyName = selectedRow.Cells["FacultyName"].Value?.ToString();
+                int TongGS = int.Parse(selectedRow.Cells["TongSoGS"].Value?.ToString() ?? "0");
+                txtMaKhoa.Text = facultyID;
+                txtTenKhoa.Text = facultyName;
+                txtTongSoGS.Text = TongGS.ToString();
+            }
         }
     }
 }
